@@ -17,4 +17,4 @@ jobs:
           path: "myFile.json"
 
       - name: File contents
-        run: echo "${ steps.read_file.outputs.Name }"
+        run: echo "${ steps.read_file.outputs.contents }"
