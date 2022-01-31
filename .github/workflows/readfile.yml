@@ -17,6 +17,6 @@ jobs:
           path: ./myFile.json
 
       - name: Echo myFile.json
-        run: echo "${{ steps.package.outputs.content }}"
+        run: echo "${{ steps.package.outputs.content.Name }}"
         
 
