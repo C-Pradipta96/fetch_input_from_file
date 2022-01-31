@@ -10,11 +10,13 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v1
 
-      - name: Read file contents
-        id: read_file
-        uses: andstor/file-reader-action@v1
+      - name: Read package.json
+        id: package
+        uses: juliangruber/read-file-action@v1
         with:
-          path: "myFile.json"
+          path: ./myFile.json
 
-      - name: File contents
-        run: echo "${ steps.read_file.outputs.contents }"
+      - name: Echo myFile.json
+        run: echo "${{ steps.package.outputs.content }}"
+        
+
